@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinner</title>
+    <style>
+        #mainDiv {
+    width: 300px;
+    height: 300px;
+    margin: 200px auto;
+    perspective: 800px;
+}
+
+#boxDiv {
+    width: 300px;   
+    transform-style: preserve-3d; 
+    animation: rotate 45s linear infinite;
+}
+
+#boxDiv div {
+    position: absolute;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    opacity: 0.75;
+    box-shadow: rgb(2, 32, 60) 0px 0px 100px inset;
+    outline: rgb(2, 32, 60) solid 1px;
+    color: white;
+}
+
+#front {
+    /* transform: translateZ(200px);
+    background: black;
+    background-position: center;
+    background-repeat: no-repeat; */
+    transform: translateZ(150px) rotateY(-180deg);
+    background-color: rgb(62, 82, 106);
+    background-image: url("./image/javascript.png");
+}
+
+
+#back {
+    /* transform: rotateY(180deg) translateZ(200px);
+    background: #101010;
+    background-position: center;
+    background-repeat: no-repeat;     */
+
+    transform: translateZ(-150px) rotateY(180deg);
+    background-color: rgb(62, 82, 106);
+    background-image: url("./image/python.png");
+}
+
+#left {
+    /* transform: rotateY(-90deg) translateX(-200px);
+    transform-origin: left;
+    background: black;
+    background-position: center;
+    background-repeat: no-repeat;     */
+
+    transform: rotateY(270deg) translateX(-150px);
+    transform-origin: left center;
+    background-color: rgb(62, 82, 106);
+    background-image: url("./image/goLogo.png");
+}
+
+#right {
+    /* transform: rotateY(90deg) translateX(200px);
+    transform-origin: right;
+    background: #101010;  
+    background-position: center;
+    background-repeat: no-repeat;     */
+
+    transform: rotateY(-270deg) translateX(150px);
+    transform-origin: right top;
+    background-color: rgb(62, 82, 106);
+    background-image: url("./image/cppLogo.png");
+}
+
+#top {
+    /* transform: rotateX(-90deg) translateY(-200px);
+    transform-origin: top;
+    background: black;
+    background-image: url(http://i72.photobucket.com/albums/i189/MrMagic13/a_logo_white2.png);
+    background-position: center;
+    background-repeat: no-repeat;  */
+
+    transform: rotateX(-90deg) translateY(-150px);
+    transform-origin: center top;
+    background-color: rgb(2, 32, 60);   
+}
+
+#bottom {
+    /* transform: rotateX(90deg) translateY(200px);
+    transform-origin: bottom;
+    background: #101010; 
+    background-image: url(http://i72.photobucket.com/albums/i189/MrMagic13/a_logo_white2.png);
+    background-position: center;
+    background-repeat: no-repeat;     */
+
+    transform: rotateX(90deg) translateY(150px);
+    transform-origin: center bottom;
+    background-color: rgb(2, 32, 60);
+
+}
+
+@keyframes rotate {
+    0% { transform: rotateY(0); }
+    100% { transform: rotateY(360deg); }
+}
+
+
+.shadow {
+    width:300px;
+    height:300px;
+    background: rgba(0,0,0,0.5);
+    box-shadow: 0 0 50px 50px rgba(0,0,0,0.5);
+    -webkit-transform: rotateX(90deg) translateZ(-250px) rotateY(180deg) translateX(0px);
+
+}
+
+    </style>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="boxDiv">
+            <div id="front"></div>
+            <div id="back"></div>
+            <div id="left"></div>
+            <div id="right"></div>
+             <div id="top">&nbsp;</div>
+            <div id="bottom">&nbsp;</div>            
+            <!-- <div class="shadow"></div> -->
+        </div>
+    </div>    
+</body>
+</html>
